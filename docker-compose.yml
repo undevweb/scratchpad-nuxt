@@ -1,0 +1,13 @@
+version: '3.7'
+
+services:
+  main :
+    image: node:12.13-alpine
+    command: npm run docker
+    volumes:
+      - .:/usr/src/app
+    working_dir: /usr/src/app
+    ports:
+      - ${PORT}:${PORT}
+    environment:
+      HOST: 0.0.0.0
