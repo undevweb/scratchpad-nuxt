@@ -28,7 +28,10 @@
                     dataToken = await this.connectDiscord({socialToken: data.socialToken});
                 }
 
-                this.popup.close();
+                if(this.popup){
+                    this.popup.close();
+                }
+
                 await this.$auth.setToken('local', 'Bearer ' + dataToken.token);
                 await this.$auth.fetchUser();
                 // await this.$router.push('/user/profile');

@@ -1,10 +1,12 @@
 import VuexORM from "@vuex-orm/core";
 import { RolesEnum } from "@/core/enums/roles.enum";
 import User from "~/models/User";
+import DiscordGuild from "~/models/DiscordGuild";
 
 const database = new VuexORM.Database();
 
 database.register(User, {});
+database.register(DiscordGuild, {});
 
 const plugin = VuexORM.install(database);
 
